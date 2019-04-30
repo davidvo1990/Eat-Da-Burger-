@@ -1,0 +1,43 @@
+<h1>Eat-Da-Burger!</h1>
+
+<h2>Menu</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+        {{burger_name}}
+        <button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
+            {{#if devoured}}Not eat yet!{{else}}Devour it!{{/if}}
+        </button>
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Devoured</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+        {{burger_name}}
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+
+<div class="col-sm">
+    <h2>What kind of food do you want to order?</h2>
+
+    <form class="create-form" action="/api/burgers" method="POST">
+
+        <div class="form-group">
+            <label for="ca">Burger Name:</label>
+            <input type="text" id="burger-name" name="name">
+        </div>
+
+        <button type="submit">Add Burger</button>
+    </form>
+</div>
