@@ -1,43 +1,47 @@
+<div class="col-xs-12 text-center">
+<img src="assets/img/hamburger.jpg" alt="burger">
 <h1>Eat-Da-Burger!</h1>
-
-<h2>Menu</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        {{burger_name}}
-        <button class="change-devoured" data-id="{{id}}" data-devoured="{{devoured}}">
-            {{#if devoured}}Not eat yet!{{else}}Devour it!{{/if}}
-        </button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Devoured</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-        {{burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
-
-
-<div class="col-sm">
+</div>
+<div class="col-xs-12 text-center col-sm">
     <h2>What kind of food do you want to order?</h2>
 
-    <form class="create-form" action="/api/burgers" method="POST">
+    <form class="create-form">
 
         <div class="form-group">
-            <label for="ca">Burger Name:</label>
-            <input type="text" id="burger-name" name="name">
+            <label for="burger-name">Burger Name:</label>
+            <input type="text" id="burger-name" burger_name="burger_name">
         </div>
 
-        <button type="submit">Add Burger</button>
+        <button class="btn btn-primary" type="submit">Add Burger</button>
     </form>
+</div>
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-6">
+            <h2>Menu</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-6">
+            <h2>Devoured</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li class="pt-1">
+                    {{!-- {{> burgers/burger-block devoured=false}} --}}
+                    {{burger_name}}
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 </div>

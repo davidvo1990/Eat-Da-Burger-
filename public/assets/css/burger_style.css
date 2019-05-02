@@ -1,0 +1,39 @@
+body {
+    /* background-image: url("assets/images/trivia.jpg"); */
+    background-image: url("../img/background.jpg");
+    font-family: Georgia, Times, "Times New Roman", serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+img{
+    width: 200px;
+    height:auto;
+}
+h1{
+    color:red;
+}
+/* change color over time for button */
+.btn {
+    animation: colorchange 10s; /* animation-name followed by duration in seconds*/
+       /* you could also use milliseconds (ms) or something like 2.5s */
+    -webkit-animation: colorchange 10s infinite; /* Chrome and Safari */
+  }
+
+  @keyframes colorchange
+  {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    75%  {background: green;}
+    100% {background: red;}
+  }
+
+  @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+  {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    75%  {background: green;}
+    100% {background: red;}
+  }
