@@ -18,7 +18,7 @@ The Burger logger created with MySQL, Node, Express, Handlebars and ORM. Follow 
 
 * Your app will store every burger in a database, whether devoured or not.
 
-* Click link to [App](https://ancient-retreat-92080.herokuapp.com/). 
+# Click link to [App](https://ancient-retreat-92080.herokuapp.com/). 
 
 ![Image](https://github.com/davidvo1990/Eat-Da-Burger-/blob/master/public/assets/img/Eat%20Da%20Burger%20.png?raw=true)
 ## Instructions
